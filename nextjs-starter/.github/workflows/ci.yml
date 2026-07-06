@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test-core:
+    name: test (core)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: cp .env.example .env
+      - run: npx playwright install chromium --with-deps
+      - run: PLAYWRIGHT_PORT=3002 npm run validate
+
+  test-full:
+    name: test (full — auth UI)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Configure env (auth enabled)
+        run: |
+          cat > .env <<EOF
+          NODE_ENV=test
+          APP_NAME=nextjs-starter
+          APP_VERSION=1.0.0
+          NEXT_PUBLIC_API_URL=http://localhost:3001
+          FEATURE_AUTH=true
+          EOF
+
+      - run: npx playwright install chromium --with-deps
+      - name: Validate (auth)
+        env:
+          FEATURE_AUTH: 'true'
+        run: PLAYWRIGHT_PORT=3003 npm run validate

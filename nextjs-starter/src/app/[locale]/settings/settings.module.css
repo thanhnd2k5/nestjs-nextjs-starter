@@ -1,0 +1,9 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.placeholder {
+  color: var(--color-text-muted);
+}

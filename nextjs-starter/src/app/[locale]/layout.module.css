@@ -1,0 +1,6 @@
+.shell {
+  min-height: 100vh;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
