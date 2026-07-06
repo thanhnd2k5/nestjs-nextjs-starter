@@ -4,10 +4,20 @@
 
 ## Quick start
 
+Requires [pnpm](https://pnpm.io/installation) 10+:
+
+```bash
+# Node 24 trở xuống (corepack có sẵn)
+corepack enable
+
+# Node 25+ (corepack không còn đi kèm Node)
+npm install -g pnpm@10.34.4
+```
+
 ```bash
 cp .env.example .env
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 - http://localhost:3000 — API info

@@ -2,7 +2,7 @@
 
 Optional modules are toggled via environment variables in `.env` (or `.env.local`).
 
-> **Note:** `NEXT_PUBLIC_*` flags are baked at **build time**. Run `npm run build` again after changing env.
+> **Note:** `NEXT_PUBLIC_*` flags are baked at **build time**. Run `pnpm run build` again after changing env.
 
 ## Auth (`FEATURE_AUTH`)
 
@@ -110,10 +110,10 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 
 ```bash
 # Terminal 1
-cd nestjs-starter && npm run dev
+cd nestjs-starter && pnpm run dev
 
 # Terminal 2
-cd nextjs-starter && npm run dev
+cd nextjs-starter && pnpm run dev
 ```
 
 Open http://localhost:3000/vi/auth/register to create an account.
@@ -128,6 +128,6 @@ API_PROXY_TARGET=http://localhost:3001
 ```
 
 ```bash
-cd nestjs-starter && PORT=3001 npm run dev
-cd nextjs-starter && npm run dev
+cd nestjs-starter && PORT=3001 pnpm run dev
+cd nextjs-starter && pnpm run dev
 ```

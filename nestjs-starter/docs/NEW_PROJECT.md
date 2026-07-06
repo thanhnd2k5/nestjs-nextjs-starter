@@ -25,7 +25,7 @@ Copy `.env.example` → `.env` and enable needed optional modules.
 - [ ] Provision PostgreSQL + Redis if using Prisma/Redis/BullMQ
 - [ ] Set `DATABASE_URL`, `REDIS_URL`
 - [ ] Generate strong secrets: `JWT_*`, `ENCRYPTION_SECRET`
-- [ ] Run `npm run db:migrate` (when Prisma enabled)
+- [ ] Run `pnpm run db:migrate` (when Prisma enabled)
 
 ## 4. Add domain modules
 
@@ -46,7 +46,7 @@ imports: [
 
 ## 5. Extend Prisma schema
 
-Add models to `prisma/schema.prisma`, run `npm run db:migrate`.
+Add models to `prisma/schema.prisma`, run `pnpm run db:migrate`.
 
 - **Using auth:** keep and extend the `User` model.
 - **Not using auth:** remove the `User` model before your first migration to avoid an unused table.

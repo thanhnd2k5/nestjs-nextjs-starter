@@ -69,7 +69,7 @@ Add strings to `src/messages/vi.json` and `src/messages/en.json`.
 - [ ] Set `NEXT_PUBLIC_API_URL=https://api.yourdomain.com`
 - [ ] Set `FEATURE_AUTH=true` if using authentication
 - [ ] Set `NODE_ENV=production`
-- [ ] Verify build: `npm run validate`
+- [ ] Verify build: `pnpm run validate`
 - [ ] Deploy; confirm `/vi` loads and API health check works
 
 ## Do not modify (extend instead)

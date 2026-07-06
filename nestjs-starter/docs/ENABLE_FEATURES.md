@@ -9,7 +9,7 @@ DATABASE_URL=postgresql://postgres:postgres@localhost:5432/nestjs_starter
 
 ```bash
 docker compose -f docker/docker-compose.yml --profile db up -d
-npm run db:migrate
+pnpm run db:migrate
 ```
 
 Provides: `PrismaService` (global inject), DB health check on `/health`.
@@ -93,6 +93,6 @@ ENCRYPTION_SECRET=dev-encryption-secret-32chars!!
 
 ```bash
 docker compose -f docker/docker-compose.yml --profile db --profile redis up -d
-npm run db:migrate
-npm run dev
+pnpm run db:migrate
+pnpm run dev
 ```

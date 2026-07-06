@@ -4,10 +4,20 @@
 
 ## Quick start
 
+Requires [pnpm](https://pnpm.io/installation) 10+:
+
+```bash
+# Node 24 trở xuống (corepack có sẵn)
+corepack enable
+
+# Node 25+ (corepack không còn đi kèm Node)
+npm install -g pnpm@10.34.4
+```
+
 ```bash
 cp .env.example .env
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 - http://localhost:3000/vi — Home (app info + API health)
@@ -37,11 +47,11 @@ See [docs/ENABLE_FEATURES.md](./docs/ENABLE_FEATURES.md).
 ```bash
 # Terminal 1 — API on port 3001
 cd ../nestjs-starter
-PORT=3001 FEATURE_PRISMA=true FEATURE_AUTH=true npm run dev
+PORT=3001 FEATURE_PRISMA=true FEATURE_AUTH=true pnpm run dev
 
 # Terminal 2 — Web on port 3000
 cd nextjs-starter
-FEATURE_AUTH=true NEXT_PUBLIC_API_URL=http://localhost:3001 npm run dev
+FEATURE_AUTH=true NEXT_PUBLIC_API_URL=http://localhost:3001 pnpm run dev
 ```
 
 Set `CORS_ORIGINS=http://localhost:3000` in nestjs-starter `.env`.
